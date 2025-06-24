@@ -7,6 +7,25 @@
 
 ---
 
+## 🟡 2024년 6월 25일 업데이트 내역
+
+- 프로젝트 구조 재정비 및 일관성 확보
+  - 모든 주요 모듈이 200줄 이하로 유지되도록 리팩토링 완료
+  - 기능별 폴더 구조 최적화 (core, automation, rag, voice, templates)
+  - 각 모듈별 명확한 역할 분담 및 인터페이스 정의
+- 코드베이스 리팩토링
+  - website_builder.py의 템플릿 함수들을 templates 폴더로 분리
+  - ai_engine.py를 엔진별 파일(ai_gemini.py, ai_openai.py 등)과 공통 인터페이스(ai_base.py)로 분리
+  - personal_ai.py, memory_manager.py 등을 기능별로 분할
+  - core/utils.py에 공통 유틸 함수 분리
+- Google App Engine 기반 자동화 전략으로 전환
+  - Google Sites API(2016년 이후 제한) 대신 App Engine 활용
+  - 공식 API(OAuth2, Cloud Resource Manager, App Engine Admin API) 기반 완전 자동화 구현
+  - 사용자 경험 개선(구글 로그인/권한 동의 간소화, 결제 계정 안내 UX)
+- 프로젝트 문서화 강화
+  - tree.md 업데이트로 전체 파일 구조 및 라인수 문서화
+  - 프로젝트 계획서 최신화(App Engine 기반 전략, 구현 단계 등)
+
 ## 🟡 2024년 6월 24일 업데이트 내역
 
 - GitHub 저장소 폴더 구조 및 파일 정리
@@ -25,8 +44,8 @@
 **프로젝트명**: LimoneIDE (리모네이드)  
 **개발 기간**: 2024년 6월 23일 ~ 현재  
 **개발 위치**: `D:\내 드라이브\LimoneIDE\`  
-**문서 작성일**: 2024년 6월 24일  
-**문서 버전**: v4.1
+**문서 작성일**: 2024년 6월 25일  
+**문서 버전**: v4.2
 
 ---
 
