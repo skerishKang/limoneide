@@ -1,7 +1,7 @@
-// LimoneIDE Mobile PWA - Main Application
+// LimoneIDE Test Mobile PWA - Main Application
 // Alpine.js 기반 음성 자동화 플랫폼
 
-function limoneideApp() {
+function limoneideTestApp() {
     return {
         // 상태 관리
         isListening: false,
@@ -438,7 +438,7 @@ function limoneideApp() {
 }
 
 // 전역 함수로 등록
-window.limoneideApp = limoneideApp;
+window.limoneideTestApp = limoneideTestApp;
 
 // PWA 설치 프롬프트
 let deferredPrompt;

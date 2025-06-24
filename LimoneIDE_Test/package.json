@@ -1,7 +1,7 @@
 {
-  "name": "limoneide-mobile",
+  "name": "limoneide-test",
   "version": "1.0.0",
-  "description": "LimoneIDE Mobile - Voice Automation Platform",
+  "description": "LimoneIDE Test - Voice Automation Platform",
   "main": "index.js",
   "scripts": {
     "start": "live-server --port=3000 --open=/",
