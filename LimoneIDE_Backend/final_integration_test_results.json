@@ -1,0 +1,46 @@
+{
+  "overall_status": "FAIL",
+  "test_duration": 6.287364721298218,
+  "total_tests": 8,
+  "passed": 3,
+  "failed": 5,
+  "warnings": 0,
+  "errors": 0,
+  "success_rate": 0.375,
+  "results": {
+    "AI 엔진 통합": {
+      "status": "FAIL",
+      "message": "AI 엔진 테스트 실패: cannot import name 'ClaudeService' from 'src.core.ai_claude' (G:\\내 드라이브\\LimoneIDE\\LimoneIDE_Backend\\src\\core\\ai_claude.py)"
+    },
+    "템플릿 시스템": {
+      "status": "FAIL",
+      "message": "템플릿 시스템 테스트 실패: 'BlogTemplate' object has no attribute 'generate'"
+    },
+    "음성 처리": {
+      "status": "FAIL",
+      "message": "음성 처리 시스템 테스트 실패: argument of type 'coroutine' is not iterable"
+    },
+    "자동화 시스템": {
+      "status": "FAIL",
+      "message": "자동화 시스템 테스트 실패: expected 'except' or 'finally' block (google_integration.py, line 250)"
+    },
+    "배포 설정": {
+      "status": "PASS",
+      "message": "배포 설정 유효함",
+      "warnings": []
+    },
+    "성능 최적화": {
+      "status": "FAIL",
+      "message": "성능 최적화 테스트 실패: attempted relative import with no known parent package"
+    },
+    "파일 구조": {
+      "status": "PASS",
+      "message": "모든 필수 파일/디렉토리 존재"
+    },
+    "문서화": {
+      "status": "PASS",
+      "message": "필수 문서 존재"
+    }
+  },
+  "timestamp": "2025-06-25T03:37:04.323884"
+}

@@ -1,0 +1,52 @@
+{
+  "overall_status": "FAIL",
+  "total_checks": 8,
+  "passed": 4,
+  "failed": 3,
+  "warnings": 1,
+  "errors": 0,
+  "critical_failures": [
+    "의존성",
+    "환경변수",
+    "AI 서비스"
+  ],
+  "results": {
+    "파일 구조": {
+      "status": "PASS",
+      "message": "모든 필수 파일/디렉토리 존재"
+    },
+    "의존성": {
+      "status": "FAIL",
+      "message": "누락된 패키지: google-generativeai, speechrecognition, python-dotenv, google-auth, google-api-python-client"
+    },
+    "환경변수": {
+      "status": "FAIL",
+      "message": "필수 환경변수 누락: GOOGLE_CLOUD_PROJECT, OPENAI_API_KEY, GEMINI_API_KEY"
+    },
+    "앱 설정": {
+      "status": "PASS",
+      "message": "배포 설정 유효함",
+      "warnings": []
+    },
+    "AI 서비스": {
+      "status": "FAIL",
+      "message": "AI 서비스 확인 실패: cannot import name 'ClaudeService' from 'src.core.ai_claude' (G:\\내 드라이브\\LimoneIDE\\LimoneIDE_Backend\\src\\core\\ai_claude.py)"
+    },
+    "보안": {
+      "status": "PASS",
+      "message": "보안 설정 확인됨",
+      "warnings": [
+        ".env 파일이 소스 코드에 포함되어 있습니다"
+      ]
+    },
+    "성능": {
+      "status": "PASS",
+      "message": "성능 설정 확인됨",
+      "warnings": []
+    },
+    "문서화": {
+      "status": "WARN",
+      "message": "문서 누락: README.md"
+    }
+  }
+}
