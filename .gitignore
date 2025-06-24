@@ -13,6 +13,13 @@ service_account_*.json
 credentials.json
 token.json
 
+# 🚫 GitHub에 올리지 않을 파일들
+.cursor/
+limoneide_development_plan.md
+limoneide_migration.md
+limoneide_plan.md
+tree.md
+
 # 🐍 Python
 __pycache__/
 *.py[cod]
