@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#4ade80">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="LimoneIDE">
+    
+    <title>LimoneIDE - Voice Automation</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-192x192.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.13.3/dist/cdn.min.js"></script>
+</head>
+<body>
+    <div id="app" x-data="limoneideApp()" class="app-container">
+        <!-- 헤더 -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="app-title">
+                    <span class="logo">🍋</span>
+                    LimoneIDE
+                </h1>
+                <div class="status-indicator" :class="connectionStatus">
+                    <span x-text="connectionStatusText"></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- 메인 컨텐츠 -->
+        <main class="main-content">
+            <!-- 음성 명령 섹션 -->
+            <section class="voice-section">
+                <div class="voice-button-container">
+                    <button 
+                        @click="toggleVoiceRecognition()"
+                        :class="['voice-button', { 'listening': isListening, 'processing': isProcessing }]"
+                        :disabled="isProcessing"
+                        class="voice-button"
+                    >
+                        <div class="voice-icon">
+                            <span x-show="!isListening && !isProcessing">🎤</span>
+                            <span x-show="isListening" class="pulse">🎤</span>
+                            <span x-show="isProcessing">⏳</span>
+                        </div>
+                        <span class="voice-text" x-text="voiceButtonText"></span>
+                    </button>
+                </div>
+                
+                <div class="voice-status" x-show="isListening || isProcessing">
+                    <div class="status-text" x-text="statusText"></div>
+                    <div class="wave-animation" x-show="isListening">
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI 응답 섹션 -->
+            <section class="response-section" x-show="aiResponse">
+                <div class="response-card">
+                    <div class="response-header">
+                        <span class="ai-icon">🤖</span>
+                        <span class="response-title">AI 응답</span>
+                        <button @click="clearResponse()" class="clear-btn">✕</button>
+                    </div>
+                    <div class="response-content" x-html="aiResponse"></div>
+                </div>
+            </section>
+
+            <!-- 빠른 명령 버튼들 -->
+            <section class="quick-commands">
+                <h3 class="section-title">빠른 명령</h3>
+                <div class="command-grid">
+                    <button @click="executeQuickCommand('웹사이트 만들어줘')" class="command-btn">
+                        🌐 웹사이트 생성
+                    </button>
+                    <button @click="executeQuickCommand('이메일 보내줘')" class="command-btn">
+                        📧 이메일 작성
+                    </button>
+                    <button @click="executeQuickCommand('일정 관리해줘')" class="command-btn">
+                        📅 일정 관리
+                    </button>
+                    <button @click="executeQuickCommand('문서 요약해줘')" class="command-btn">
+                        📄 문서 요약
+                    </button>
+                </div>
+            </section>
+
+            <!-- 최근 작업 히스토리 -->
+            <section class="history-section" x-show="recentTasks.length > 0">
+                <h3 class="section-title">최근 작업</h3>
+                <div class="task-list">
+                    <template x-for="task in recentTasks" :key="task.id">
+                        <div class="task-item">
+                            <div class="task-icon" x-text="task.icon"></div>
+                            <div class="task-info">
+                                <div class="task-title" x-text="task.title"></div>
+                                <div class="task-time" x-text="task.time"></div>
+                            </div>
+                            <button @click="replayTask(task)" class="replay-btn">🔄</button>
+                        </div>
+                    </template>
+                </div>
+            </section>
+        </main>
+
+        <!-- 하단 네비게이션 -->
+        <nav class="bottom-nav">
+            <button @click="showHome()" class="nav-btn active">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">홈</span>
+            </button>
+            <button @click="showProjects()" class="nav-btn">
+                <span class="nav-icon">📁</span>
+                <span class="nav-text">프로젝트</span>
+            </button>
+            <button @click="showSettings()" class="nav-btn">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-text">설정</span>
+            </button>
+        </nav>
+
+        <!-- 로딩 오버레이 -->
+        <div class="loading-overlay" x-show="isLoading" x-transition>
+            <div class="loading-spinner"></div>
+            <div class="loading-text" x-text="loadingText"></div>
+        </div>
+
+        <!-- 알림 토스트 -->
+        <div class="toast-container">
+            <template x-for="toast in toasts" :key="toast.id">
+                <div class="toast" :class="toast.type" x-show="toast.visible" x-transition>
+                    <span class="toast-icon" x-text="toast.icon"></span>
+                    <span class="toast-message" x-text="toast.message"></span>
+                </div>
+            </template>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/app.js"></script>
+</body>
+</html> 

@@ -1,0 +1,28 @@
+{
+  "name": "limoneide-mobile",
+  "version": "1.0.0",
+  "description": "LimoneIDE Mobile - Voice Automation Platform",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server --port=3000 --open=/",
+    "build": "echo 'PWA build complete'",
+    "dev": "live-server --port=3000 --open=/",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "limoneide",
+    "voice",
+    "automation",
+    "mobile",
+    "pwa",
+    "ai"
+  ],
+  "author": "LimoneIDE Team",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "dependencies": {
+    "alpinejs": "^3.13.3"
+  }
+} 
