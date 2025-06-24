@@ -84,7 +84,7 @@
 **평가**: PWA 완벽 구현, 오프라인 지원 성공
 
 #### **6단계: React Native 앱 개발** ✅ 완료 (95/100)
-- [완료] `LimoneIDE_ReactNative/` - React Native 프로젝트 생성
+- [완료] `LimoneIDE_Beta/` - React Native 프로젝트 생성
 - [완료] `package.json` - Expo 기반 의존성 관리
 - [완료] `App.tsx` - 메인 앱 컴포넌트
 - [완료] `src/screens/` - 홈, 프로젝트, 설정 스크린
@@ -119,7 +119,7 @@ LimoneIDE/
 │   ├── package.json             # 의존성
 │   ├── icons/                   # PWA 아이콘
 │   └── README.md                # 모바일 가이드
-├── LimoneIDE_ReactNative/       # ✅ React Native 앱 (1,800줄)
+├── LimoneIDE_Beta/       # ✅ React Native 앱 (1,800줄)
 │   ├── App.tsx                  # 메인 앱
 │   ├── package.json             # Expo 의존성
 │   ├── src/
@@ -231,7 +231,7 @@ $ python server.py
 ### **4. React Native 앱 데모** ✅ 성공 (95/100)
 ```bash
 # React Native 앱 구조
-$ cd LimoneIDE_ReactNative
+$ cd LimoneIDE_Beta
 $ npm install
 $ npm start
 
