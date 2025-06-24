@@ -21,6 +21,11 @@ try:
 except ImportError:
     OLLAMA_AVAILABLE = False
 
+from src.core.ai_gemini import GeminiHandler
+from src.core.ai_openai import OpenAIHandler
+from src.core.ai_claude import ClaudeHandler
+from src.core.ai_ollama import OllamaHandler
+
 @dataclass
 class AIResponse:
     """AI 응답 데이터 클래스"""
@@ -184,90 +189,6 @@ class LimoneAIEngine:
             tokens_used=0,  # 실제 토큰 수는 각 핸들러에서 계산
             response_time=end_time - start_time
         )
-
-class GeminiHandler:
-    """Google Gemini AI 핸들러"""
-    
-    def __init__(self, api_key: str = None):
-        self.api_key = api_key
-        self.model = None
-        if api_key:
-            genai.configure(api_key=api_key)
-            self.model = genai.GenerativeModel('gemini-pro')
-    
-    def is_available(self) -> bool:
-        return self.model is not None
-    
-    async def generate_response(self, prompt: str) -> str:
-        if not self.is_available():
-            raise Exception("Gemini API 키가 설정되지 않았습니다.")
-        
-        response = self.model.generate_content(prompt)
-        return response.text
-
-class OpenAIHandler:
-    """OpenAI GPT 핸들러"""
-    
-    def __init__(self, api_key: str = None):
-        self.api_key = api_key
-        self.client = None
-        if api_key:
-            self.client = openai.AsyncOpenAI(api_key=api_key)
-    
-    def is_available(self) -> bool:
-        return self.client is not None
-    
-    async def generate_response(self, prompt: str) -> str:
-        if not self.is_available():
-            raise Exception("OpenAI API 키가 설정되지 않았습니다.")
-        
-        response = await self.client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=[{"role": "user", "content": prompt}]
-        )
-        return response.choices[0].message.content
-
-class ClaudeHandler:
-    """Anthropic Claude 핸들러"""
-    
-    def __init__(self, api_key: str = None):
-        self.api_key = api_key
-        self.client = None
-        if api_key:
-            self.client = Anthropic(api_key=api_key)
-    
-    def is_available(self) -> bool:
-        return self.client is not None
-    
-    async def generate_response(self, prompt: str) -> str:
-        if not self.is_available():
-            raise Exception("Claude API 키가 설정되지 않았습니다.")
-        
-        response = await self.client.messages.create(
-            model="claude-3-sonnet-20240229",
-            max_tokens=1000,
-            messages=[{"role": "user", "content": prompt}]
-        )
-        return response.content[0].text
-
-class OllamaHandler:
-    """로컬 Ollama 핸들러"""
-    
-    def __init__(self):
-        self.client = OllamaClient()
-    
-    def is_available(self) -> bool:
-        try:
-            # 간단한 연결 테스트
-            return True
-        except:
-            return False
-    
-    async def generate_response(self, prompt: str) -> str:
-        response = self.client.chat(model='llama2', messages=[
-            {'role': 'user', 'content': prompt}
-        ])
-        return response['message']['content']
 
 class VoiceProcessor:
     """음성 처리 클래스 (프로토타입)"""

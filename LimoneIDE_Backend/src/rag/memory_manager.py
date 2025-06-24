@@ -7,6 +7,9 @@ import json
 import time
 from typing import Dict, Any, List, Optional
 from datetime import datetime
+from .user_profile import get_user_context
+from .project_history import get_project_history, export_conversations
+from src.core.utils import extract_tags
 
 class MemoryManager:
     """
@@ -49,30 +52,6 @@ class MemoryManager:
         except Exception as e:
             print(f"대화 저장 실패: {e}")
             return False
-
-    def extract_tags(self, user_message: str, ai_response: str) -> List[str]:
-        """
-        대화에서 태그 추출 (프로토타입)
-        """
-        tags = []
-        
-        # 키워드 기반 태그 추출
-        keywords = {
-            "website": ["웹사이트", "사이트", "만들어줘", "생성"],
-            "automation": ["자동화", "매일", "매주", "정기"],
-            "analysis": ["분석", "통계", "데이터", "리포트"],
-            "content": ["글", "콘텐츠", "블로그", "뉴스"],
-            "ecommerce": ["쇼핑몰", "상품", "결제", "주문"],
-            "blog": ["블로그", "글쓰기", "포스트", "카테고리"]
-        }
-        
-        combined_text = (user_message + " " + ai_response).lower()
-        
-        for category, words in keywords.items():
-            if any(word in combined_text for word in words):
-                tags.append(category)
-        
-        return tags
 
     def update_search_index(self, conversation: Dict[str, Any]):
         """

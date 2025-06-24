@@ -111,7 +111,7 @@ class LimoneIDE:
         """
         데모: "쇼핑몰 만들어줘" → 30초 완성
         """
-        demo_command = "온라인 쇼핑몰 만들어줘. 케이크 주문받는 거"
+        demo_command = "포트폴리오 사이트 만들어줘. 내 소개와 프로젝트 목록 포함"
         logger.info(f"데모 시작: {demo_command}")
         
         return await self.process_voice_command(demo_command)
