@@ -1,0 +1,174 @@
+{
+  "test_summary": {
+    "total_tests": 10,
+    "passed_tests": 9,
+    "failed_tests": 1,
+    "success_rate": 90.0,
+    "total_duration": 28.992503881454468
+  },
+  "test_results": [
+    {
+      "test_name": "System Status Check",
+      "success": true,
+      "duration": 2.072129011154175,
+      "timestamp": "2025-06-25T01:14:43.927709",
+      "details": {
+        "backend_status": true,
+        "frontend_status": true
+      }
+    },
+    {
+      "test_name": "Authentication Flow",
+      "success": true,
+      "duration": 2.0504910945892334,
+      "timestamp": "2025-06-25T01:14:45.989169",
+      "details": {
+        "oauth_status": true
+      }
+    },
+    {
+      "test_name": "Project Creation",
+      "success": true,
+      "duration": 2.0838418006896973,
+      "timestamp": "2025-06-25T01:14:48.105236",
+      "details": {
+        "response_status": 200
+      }
+    },
+    {
+      "test_name": "Voice Command Processing",
+      "success": true,
+      "duration": 2.0307435989379883,
+      "timestamp": "2025-06-25T01:14:50.147948",
+      "details": {
+        "response_status": 200
+      }
+    },
+    {
+      "test_name": "AI Code Generation",
+      "success": true,
+      "duration": 2.0579044818878174,
+      "timestamp": "2025-06-25T01:14:52.233776",
+      "details": {
+        "response_status": 200
+      }
+    },
+    {
+      "test_name": "Deployment Pipeline",
+      "success": true,
+      "duration": 2.0593442916870117,
+      "timestamp": "2025-06-25T01:14:54.322042",
+      "details": {
+        "response_status": 200
+      }
+    },
+    {
+      "test_name": "Cloud SQL Integration",
+      "success": true,
+      "duration": 2.040855884552002,
+      "timestamp": "2025-06-25T01:14:56.409746",
+      "details": {
+        "response_status": 200
+      }
+    },
+    {
+      "test_name": "Blog Template",
+      "success": true,
+      "duration": 2.063789129257202,
+      "timestamp": "2025-06-25T01:14:58.485504",
+      "details": {
+        "response_status": 200
+      }
+    },
+    {
+      "test_name": "Performance Test",
+      "success": false,
+      "duration": 10.260087490081787,
+      "timestamp": "2025-06-25T01:15:08.762685",
+      "details": {
+        "avg_response_time": 2.0520174980163572,
+        "max_response_time": 2.059668779373169,
+        "response_times": [
+          2.052284002304077,
+          2.052574634552002,
+          2.0423672199249268,
+          2.059668779373169,
+          2.0531928539276123
+        ]
+      }
+    },
+    {
+      "test_name": "Error Handling",
+      "success": true,
+      "duration": 2.0375516414642334,
+      "timestamp": "2025-06-25T01:15:10.815173",
+      "details": {
+        "error_status_code": 422
+      }
+    }
+  ],
+  "performance_metrics": {
+    "System Status Check": {
+      "avg_duration": 2.072129011154175,
+      "min_duration": 2.072129011154175,
+      "max_duration": 2.072129011154175,
+      "count": 1
+    },
+    "Authentication Flow": {
+      "avg_duration": 2.0504910945892334,
+      "min_duration": 2.0504910945892334,
+      "max_duration": 2.0504910945892334,
+      "count": 1
+    },
+    "Project Creation": {
+      "avg_duration": 2.0838418006896973,
+      "min_duration": 2.0838418006896973,
+      "max_duration": 2.0838418006896973,
+      "count": 1
+    },
+    "Voice Command Processing": {
+      "avg_duration": 2.0307435989379883,
+      "min_duration": 2.0307435989379883,
+      "max_duration": 2.0307435989379883,
+      "count": 1
+    },
+    "AI Code Generation": {
+      "avg_duration": 2.0579044818878174,
+      "min_duration": 2.0579044818878174,
+      "max_duration": 2.0579044818878174,
+      "count": 1
+    },
+    "Deployment Pipeline": {
+      "avg_duration": 2.0593442916870117,
+      "min_duration": 2.0593442916870117,
+      "max_duration": 2.0593442916870117,
+      "count": 1
+    },
+    "Cloud SQL Integration": {
+      "avg_duration": 2.040855884552002,
+      "min_duration": 2.040855884552002,
+      "max_duration": 2.040855884552002,
+      "count": 1
+    },
+    "Blog Template": {
+      "avg_duration": 2.063789129257202,
+      "min_duration": 2.063789129257202,
+      "max_duration": 2.063789129257202,
+      "count": 1
+    },
+    "Performance Test": {
+      "avg_duration": 10.260087490081787,
+      "min_duration": 10.260087490081787,
+      "max_duration": 10.260087490081787,
+      "count": 1
+    },
+    "Error Handling": {
+      "avg_duration": 2.0375516414642334,
+      "min_duration": 2.0375516414642334,
+      "max_duration": 2.0375516414642334,
+      "count": 1
+    }
+  },
+  "timestamp": "2025-06-25T01:15:10.830132",
+  "version": "2.0"
+}

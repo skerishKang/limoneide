@@ -19,6 +19,18 @@ class IntentAnalyzer:
             "content_generation": ["글", "콘텐츠", "블로그", "뉴스"]
         }
 
+    def analyze(self, text: str) -> Dict[str, Any]:
+        """
+        텍스트를 분석하여 의도와 매개변수 추출
+        
+        Args:
+            text: 분석할 텍스트
+            
+        Returns:
+            Dict: 분석 결과
+        """
+        return self.analyze_intent(text)
+
     def analyze_intent(self, text: str) -> Dict[str, Any]:
         """
         텍스트를 분석하여 의도와 매개변수 추출
@@ -30,7 +42,8 @@ class IntentAnalyzer:
             "type": intent_type,
             "confidence": 0.85,  # 실제로는 AI 모델의 신뢰도
             "parameters": parameters,
-            "original_text": text
+            "original_text": text,
+            **parameters  # 매개변수를 최상위 수준에 추가
         }
 
     def classify_intent(self, text: str) -> str:
@@ -59,6 +72,15 @@ class IntentAnalyzer:
             elif "블로그" in text:
                 params["website_type"] = "blog"
                 params["features"] = ["글쓰기", "댓글", "카테고리"]
+            elif "포트폴리오" in text:
+                params["website_type"] = "portfolio"
+                params["features"] = ["프로젝트", "소개", "연락처"]
+            elif "랜딩" in text:
+                params["website_type"] = "landing"
+                params["features"] = ["헤더", "특징", "가격", "연락처"]
+            else:
+                params["website_type"] = "general"
+                params["features"] = ["기본 레이아웃", "반응형"]
         
         elif intent_type == "workflow_automation":
             # 자동화 관련 매개변수
