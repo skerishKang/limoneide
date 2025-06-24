@@ -1,6 +1,0 @@
----
-description: 
-globs: 
-alwaysApply: true
----
-.env파일은 현재 있는 상태이나 접근이 불가하므로 사용자에게 요청해야함. (읽기나 수정, 삭제 등)
