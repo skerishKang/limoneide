@@ -2,7 +2,7 @@
 
 ```
 LimoneIDE/
-├── LimoneIDE_Core/                    # 핵심 백엔드 시스템
+├── LimoneIDE_Backend/                    # 핵심 백엔드 시스템
 │   ├── config/                        # 설정 파일
 │   ├── docs/                          # 문서
 │   ├── examples/                      # 예제 코드
@@ -91,7 +91,7 @@ LimoneIDE/
 - **문서**: 8개 (README, 계획서 등)
 
 ### **주요 모듈**
-- **LimoneIDE_Core**: 백엔드 시스템 (3,200줄)
+- **LimoneIDE_Backend**: 백엔드 시스템 (3,200줄)
 - **LimoneIDE_Mobile**: PWA 앱 (1,600줄)
 - **LimoneIDE_ReactNative**: 네이티브 앱 (1,800줄)
 - **문서**: 프로젝트 문서 (1,900줄)

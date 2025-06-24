@@ -79,7 +79,7 @@
 #### Week 1: 기반 시스템 구축
 ```bash
 # 프로젝트 구조 생성
-LimoneIDE_Core/
+LimoneIDE_Backend/
 ├── src/
 │   ├── core/
 │   │   ├── ai_engine.py          # ai_handler.py 기반
@@ -249,10 +249,10 @@ class WorkflowEngine:
 ### **1. 즉시 활용 (80% 기존 코드 재사용)**
 ```python
 # 기존 AI_Solarbot 모듈들을 그대로 복사 + 확장
-cp -r AI_Solarbot_Project/src/ai_handler.py → LimoneIDE/src/core/ai_engine.py
-cp -r AI_Solarbot_Project/src/online_code_executor.py → LimoneIDE/src/core/code_executor.py
-cp -r AI_Solarbot_Project/src/error_handler.py → LimoneIDE/src/core/error_handler.py
-cp -r AI_Solarbot_Project/src/google_drive_handler.py → LimoneIDE/src/automation/google_integration.py
+cp -r AI_Solarbot_Project/src/ai_handler.py LimoneIDE_Backend/src/core/ai_engine.py
+cp -r AI_Solarbot_Project/src/online_code_executor.py LimoneIDE_Backend/src/core/code_executor.py
+cp -r AI_Solarbot_Project/src/error_handler.py LimoneIDE_Backend/src/core/error_handler.py
+cp -r AI_Solarbot_Project/src/google_drive_handler.py LimoneIDE_Backend/src/automation/google_integration.py
 ```
 
 ### **2. 확장 개발 (20% 새로운 기능)**
@@ -319,10 +319,10 @@ class PersonalRAGSystem:
 ### **오늘 할 수 있는 일:**
 ```bash
 # 1. 코어 모듈 복사
-cp -r AI_Solarbot_Project/src/ai_handler.py LimoneIDE_Core/src/core/ai_engine.py
+cp -r AI_Solarbot_Project/src/ai_handler.py LimoneIDE_Backend/src/core/ai_engine.py
 
 # 2. 기본 구조 생성
-mkdir -p LimoneIDE_Core/src/{core,voice,mobile,automation}
+mkdir -p LimoneIDE_Backend/src/{core,voice,mobile,automation}
 
 # 3. 첫 번째 음성 명령 프로토타입 개발
 # "웹사이트 만들어줘" → Alpine.js 생성 → Google Sites 배포

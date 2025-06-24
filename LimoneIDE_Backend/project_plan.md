@@ -78,7 +78,7 @@
 
 ```
 LimoneIDE/
-├── LimoneIDE_Core/              # ✅ 핵심 백엔드 (3,200줄)
+├── LimoneIDE_Backend/              # ✅ 핵심 백엔드 (3,200줄)
 │   ├── src/
 │   │   ├── core/                # AI 엔진, 오류 처리, 코드 실행
 │   │   ├── voice/               # 음성 인식, 의도 분석, 명령 처리
@@ -286,7 +286,7 @@ $ npm start
 ## 🎉 최종 성과
 
 ### **완성된 제품**
-1. **LimoneIDE Core**: Python 기반 백엔드 시스템 (100/100)
+1. **LimoneIDE Backend**: Python 기반 백엔드 시스템 (100/100)
 2. **LimoneIDE PWA**: Progressive Web App (100/100)
 3. **LimoneIDE React Native**: 네이티브 모바일 앱 (95/100)
 

@@ -16,7 +16,7 @@ import sys
 import os
 
 # LimoneIDE Core 모듈 import
-sys.path.append('../LimoneIDE_Core')
+sys.path.append('../LimoneIDE_Backend')
 from src.core.ai_engine import AIEngine
 from src.voice.intent_analyzer import IntentAnalyzer
 from src.automation.workflow_engine import WorkflowEngine

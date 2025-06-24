@@ -128,7 +128,7 @@ Premium Plugins (선택 구매):
 
 ```
 G:\내 드라이브\LimoneIDE\개발\
-├── LimoneIDE_Core/                 # 🍋 메인 프로젝트
+├── LimoneIDE_Backend/                 # 🍋 메인 프로젝트
 │   ├── src/
 │   │   ├── core/                   # 핵심 엔진 (AI_Solarbot 기반)
 │   │   │   ├── ai_engine.py        # ai_handler.py 확장 (Gemini+GPT+Claude)
@@ -194,7 +194,7 @@ G:\내 드라이브\LimoneIDE\개발\
 
 #### **Week 1: AI 엔진 & 기반 시스템**
 - [ ] **Day 1-2**: 프로젝트 구조 생성
-  - LimoneIDE_Core 디렉토리 생성
+  - LimoneIDE_Backend 디렉토리 생성
   - 기본 파일 구조 설정
   - Git 저장소 초기화
 - [ ] **Day 3-4**: AI_Solarbot 모듈 포팅
@@ -466,8 +466,8 @@ class WorkflowGenerator:
 ### **1단계: 개발 환경 설정**
 ```bash
 # 1. 프로젝트 디렉토리 생성
-mkdir -p "G:\내 드라이브\LimoneIDE\개발\LimoneIDE_Core"
-cd "G:\내 드라이브\LimoneIDE\개발\LimoneIDE_Core"
+mkdir -p "G:\내 드라이브\LimoneIDE\개발\LimoneIDE_Backend"
+cd "G:\내 드라이브\LimoneIDE\개발\LimoneIDE_Backend"
 
 # 2. Python 가상환경 설정
 python -m venv venv

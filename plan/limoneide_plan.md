@@ -25,7 +25,7 @@
 
 ```
 D:\내 드라이브\LimoneIDE\개발\
-├── LimoneIDE_Core/                 # 🍋 메인 프로젝트
+├── LimoneIDE_Backend/                 # 🍋 메인 프로젝트
 │   ├── src/
 │   │   ├── core/                   # 핵심 엔진
 │   │   │   ├── ai_engine.py        # 멀티 AI 엔진 (Gemini+GPT+Claude)
@@ -471,8 +471,8 @@ Docker + Docker Compose
 echo "🍋 LimoneIDE 개발 환경 설정 시작..."
 
 # 1. 프로젝트 구조 생성
-mkdir -p LimoneIDE_Core/src/{core,voice,automation,mobile,rag}
-mkdir -p LimoneIDE_Core/{config,docs,tests,templates,examples}
+mkdir -p LimoneIDE_Backend/src/{core,voice,automation,mobile,rag}
+mkdir -p LimoneIDE_Backend/{config,docs,tests,templates,examples}
 
 # 2. Python 가상환경 설정 (Python 3.10+)
 python -m venv venv
@@ -542,7 +542,7 @@ echo "🚀 다음 단계:"
 echo "  1. cd D:\\내 드라이브\\LimoneIDE\\개발"
 echo "  2. chmod +x setup_limoneide.sh"
 echo "  3. ./setup_limoneide.sh"
-echo "  4. cd LimoneIDE_Core"
+echo "  4. cd LimoneIDE_Backend"
 echo "  5. python main.py"
 echo ""
 echo "📚 개발 문서: docs/README.md"
@@ -558,8 +558,8 @@ echo "📚 개발 문서: docs/README.md"
 cd "D:\내 드라이브\LimoneIDE\개발"
 
 # 2. 프로젝트 구조 생성 (즉시 실행 가능)
-mkdir LimoneIDE_Core
-cd LimoneIDE_Core
+mkdir LimoneIDE_Backend
+cd LimoneIDE_Backend
 mkdir src config docs tests templates examples
 mkdir src\core src\voice src\automation src\mobile src\rag
 

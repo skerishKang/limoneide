@@ -100,7 +100,7 @@
 
 ```
 LimoneIDE/
-├── LimoneIDE_Core/              # ✅ 핵심 백엔드 (3,200줄)
+├── LimoneIDE_Backend/              # ✅ 핵심 백엔드 (3,200줄)
 │   ├── src/
 │   │   ├── core/                # AI 엔진, 오류 처리, 코드 실행
 │   │   ├── voice/               # 음성 인식, 의도 분석, 명령 처리
